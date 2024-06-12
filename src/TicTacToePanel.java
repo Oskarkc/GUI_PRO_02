@@ -2,9 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 
 public class TicTacToePanel extends JPanel {
-    private JButton [] TicTacToeButtons;
+    private int position;
+    private Playermoved listener;
+    private JButton[] TicTacToeButtons;
     private static char currentPlayer = 'X';
     private final int[][] winnerpoles = {
             {0,1,2},
@@ -15,23 +18,28 @@ public class TicTacToePanel extends JPanel {
 
             {0,4,8},{2,4,6}
     };
-    public TicTacToePanel() {
+    public TicTacToePanel(Playermoved listener) {
+        this.listener = listener;
         this.setLayout(new GridLayout(3,3));
         TicTacToeButtons = new JButton[9];
         for (int i = 0; i < 9; i++) {
             TicTacToeButtons[i] = new JButton("");
+            position = i;
             TicTacToeButtons[i].addActionListener(e -> {
+                JButton clickedButton = (JButton) e.getSource();
                 if(((JButton) e.getSource()).getText().equals("")){
                     ((JButton) e.getSource()).setText(String.valueOf(currentPlayer));
                     if(currentPlayer == 'X'){
                         ((JButton) e.getSource()).setForeground(Color.RED);
                     }else
                        ((JButton) e.getSource()).setForeground(Color.GREEN);
-
                         if(IsPlayerWon()){
                             ChangeButtons();
                         }else{
                             currentPlayer = (currentPlayer =='X')? 'O' : 'X';
+                        }
+                        if(listener != null){
+                            listener.Playermoved(Arrays.asList(TicTacToeButtons).indexOf(clickedButton));
                         }
                 }
             });
@@ -60,6 +68,9 @@ public class TicTacToePanel extends JPanel {
         else
             this.setBackground(Color.GREEN);
 
+    }
+    public void setPlayermoved(Playermoved listener){
+        this.listener = listener;
     }
 }
 
