@@ -1,12 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Arrays;
 
 public class TicTacToePanel extends JPanel {
     private int position;
-    private Playermoved listener;
+    private playermoved listener;
     private JButton[] TicTacToeButtons;
     private static char currentPlayer = 'X';
     private final int[][] winnerpoles = {
@@ -18,7 +16,7 @@ public class TicTacToePanel extends JPanel {
 
             {0,4,8},{2,4,6}
     };
-    public TicTacToePanel(Playermoved listener) {
+    public TicTacToePanel(playermoved listener) {
         this.listener = listener;
         this.setLayout(new GridLayout(3,3));
         TicTacToeButtons = new JButton[9];
@@ -39,7 +37,7 @@ public class TicTacToePanel extends JPanel {
                             currentPlayer = (currentPlayer =='X')? 'O' : 'X';
                         }
                         if(listener != null){
-                            listener.Playermoved(Arrays.asList(TicTacToeButtons).indexOf(clickedButton));
+                            listener.playermoved(Arrays.asList(TicTacToeButtons).indexOf(clickedButton));
                         }
                 }
             });
@@ -67,10 +65,7 @@ public class TicTacToePanel extends JPanel {
             this.setBackground(Color.RED);
         else
             this.setBackground(Color.GREEN);
+    }
 
-    }
-    public void setPlayermoved(Playermoved listener){
-        this.listener = listener;
-    }
 }
 

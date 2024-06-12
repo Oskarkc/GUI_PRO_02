@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d94a635c-8f40-40eb-a474-72a698b82caf" name="Changes" comment="first">
-      <change afterPath="$PROJECT_DIR$/src/Playermoved.java" afterDir="false" />
+    <list default="true" id="d94a635c-8f40-40eb-a474-72a698b82caf" name="Changes" comment="hakies gowno">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Playermoved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/playermoved.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToeFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToePanel.java" afterDir="false" />
     </list>
@@ -74,8 +74,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -93,6 +93,8 @@
       <workItem from="1718140827020" duration="1004000" />
       <workItem from="1718142118149" duration="6262000" />
       <workItem from="1718148580921" duration="797000" />
+      <workItem from="1718187874762" duration="1859000" />
+      <workItem from="1718191359830" duration="2589000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />
