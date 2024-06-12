@@ -33,6 +33,7 @@ public class TicTacToePanel extends JPanel {
                        ((JButton) e.getSource()).setForeground(Color.GREEN);
                         if(IsPlayerWon()){
                             ChangeButtons();
+                            currentPlayer = (currentPlayer =='X')? 'O' : 'X';
                         }else{
                             currentPlayer = (currentPlayer =='X')? 'O' : 'X';
                         }
