@@ -1,3 +1,3 @@
 public interface playermoved {
-    void playermoved(int x);
+    void playermoved(char currentPlayer, int mainboard , int smallboard);
 }

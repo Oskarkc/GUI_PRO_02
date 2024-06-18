@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d94a635c-8f40-40eb-a474-72a698b82caf" name="Changes" comment="hakies gowno">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d94a635c-8f40-40eb-a474-72a698b82caf" name="Changes" comment="cos zmeinilem ale nie wiem co">
+      <change afterPath="$PROJECT_DIR$/src/TicTacToeMoveHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Playermoved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/playermoved.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToeFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToeFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TicTacToePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TicTacToePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/playermoved.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/playermoved.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
         <option value="Interface" />
       </list>
@@ -95,6 +96,8 @@
       <workItem from="1718148580921" duration="797000" />
       <workItem from="1718187874762" duration="1859000" />
       <workItem from="1718191359830" duration="2589000" />
+      <workItem from="1718631204354" duration="13960000" />
+      <workItem from="1718702576180" duration="2646000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <option name="closed" value="true" />

@@ -1,10 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Arrays;
 
 public class TicTacToeFrame extends JFrame implements playermoved {
+    TicTacToeMoveHistory moveHistory;
     JPanel panele[] = new JPanel[9];
+    TicTacToeMenu menu = new TicTacToeMenu();
     boolean currentplayerX = false;
     boolean currentplayerO = false;
     private final int[][] winnerpoles = {
@@ -22,29 +26,45 @@ public class TicTacToeFrame extends JFrame implements playermoved {
         this.setSize(600, 600);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setLayout(new GridLayout(3, 3));
-        for (int i = 0; i < 9; i++) {
-            panele[i] = new TicTacToePanel(this);
-            panele[i].setBorder(BorderFactory.createLineBorder(Color.BLACK));
-            panele[i].addMouseListener(new MouseAdapter(){ public void mouseEntered(MouseEvent e){
-                if (checkforWin()) {
-                    if (currentplayerX) {
-                        JOptionPane.showMessageDialog(TicTacToeFrame.this, "X wins");
+            this.add(menu);
+            menu.singleplayer.addActionListener(e->{
+                revalidate();
+                repaint();
+            });
+            menu.multiplayer.addActionListener(e -> {
+                remove(menu);
+                moveHistory=new TicTacToeMoveHistory();
+                for (int i = 0; i < 9; i++) {
+                panele[i] = new TicTacToePanel(this,i);
+                panele[i].setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                panele[i].addMouseListener(new MouseAdapter() {
+                    public void mouseEntered(MouseEvent e) {
+                        if (checkforWin()) {
+                            if (currentplayerX) {
+                                JOptionPane.showMessageDialog(TicTacToeFrame.this, "X wins");
+                            }
+                            if (currentplayerO) {
+                                JOptionPane.showMessageDialog(TicTacToeFrame.this, "O wins");
+                            }
+                        }
                     }
-                    if (currentplayerO) {
-                        JOptionPane.showMessageDialog(TicTacToeFrame.this, "O wins");
-                    }
-                }
-            }});
-            this.add(panele[i]);
-        }
-        pack();
-        this.setVisible(true);
+                });
+                this.add(panele[i]);
+            }
+                pack();
+                revalidate();
+                repaint();
+            });
+            this.setVisible(true);
+
+
 
     }
 
     @Override
-    public void playermoved(int x) {
-        if(panele[x].getBackground().equals(Color.RED) || panele[x].getBackground().equals(Color.GREEN)){
+    public void playermoved(char current, int x,int y) {
+        moveHistory.addMove(current,transformOnString(x),transformOnString(y));
+        if(panele[y].getBackground().equals(Color.RED) || panele[y].getBackground().equals(Color.GREEN)){
             for (int i = 0; i < 9; i++) {
                 Component[] components = panele[i].getComponents();
                 for(Component c : components){
@@ -55,13 +75,14 @@ public class TicTacToeFrame extends JFrame implements playermoved {
         }
         for (int j = 0; j < 9; j++) {
             Component[] components = panele[j].getComponents();
-            if (j == x) {
+            if (j == y) {
                 for (Component c : components)
                     c.setEnabled(true);
             } else
                 for (Component c : components)
                     c.setEnabled(false);
         }
+
     }
 
     private boolean checkforWin() {
@@ -84,6 +105,19 @@ public class TicTacToeFrame extends JFrame implements playermoved {
         }
         return false;
     }
-
+public String transformOnString(int x){
+    return switch (x) {
+        case 0 -> "LG";
+        case 1 -> "SG";
+        case 2 -> "PG";
+        case 3 -> "SL";
+        case 4 -> "SS";
+        case 5 -> "SP";
+        case 6 -> "DL";
+        case 7 -> "DS";
+        case 8 -> "DP";
+        default -> "";
+    };
+}
 
 }
